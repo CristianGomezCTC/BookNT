@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\cristian.gomez\Desktop\ApiBooks\FrontEnd\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\cristian.gomez\Desktop\ApiBooks\FrontEnd\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

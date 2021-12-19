@@ -1,0 +1,49 @@
+﻿@inject NavigationManager navigationManager
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Count Page</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in bookList)
+        {
+            <tr>
+                <th scope="row">@book.id</th>
+                <td>@book.title</td>
+                <td>@book.pageCount</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button @onclick="@(e => GotoDetails(book.id))" type="button" class="btn btn-primary">Details</button>
+                        <button @onclick="@(e => GotoEdit(book.id))" type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn-danger">Delete</button>
+                    </div>
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@code {
+
+    [Parameter]
+    public IEnumerable<Book> bookList { get; set; }
+
+    public void GotoDetails(int id)
+    {
+        navigationManager.NavigateTo($"/Details/{id}");
+    }
+
+    public void GotoEdit(int id)
+    {
+        navigationManager.NavigateTo($"/EditBook/{id}");
+    }
+
+
+}
